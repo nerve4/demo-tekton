@@ -1,0 +1,24 @@
+# Default values for nerve4 demo-tekton
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+service:
+  name: nerve4Blog
+  type: NodePort
+  app: blog
+  protocol: TCP
+  port: 80
+  targetPort: 2368
+
+blog:
+  name: nerve4Blog
+  label: blog
+  replicas: 1
+  containerPort: 2368
+  url: url
+  urlValue: http://blog.nerve4.com
+
+image:
+  repository: ghcr.io/nerve4/ghost
+  tag: "1.0"
+  pullPolicy: Always
